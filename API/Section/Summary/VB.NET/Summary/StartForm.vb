@@ -9,9 +9,6 @@ Public Class StartForm
 	Public Sub New()
 		MyBase.New()
 		Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
-#If NETCOREAPP3_1_OR_GREATER
-		Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled)
-#End If
 		'This call is required by the Windows Form Designer.
 		InitializeComponent()
 		Me.comboBox1.Items.AddRange(New String() {My.Resources.OrdersReport, My.Resources.DataFieldExpressionsReport})

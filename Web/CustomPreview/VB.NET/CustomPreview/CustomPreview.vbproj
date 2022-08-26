@@ -1,140 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion />
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{266D5510-F7E4-4885-A7F2-617B232256B8}</ProjectGuid>
-    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GrapeCity.ActiveReports.Samples.Web.CustomPreview</RootNamespace>
-    <AssemblyName>CustomPreview</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
-    <Use64BitIISExpress />
-    <UseGlobalApplicationHostFile />
-    <TargetFrameworkProfile />
+    <RootNamespace>CustomPreview</RootNamespace>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\</OutputPath>
-    <DefineConstants>DEBUG,TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-  </PropertyGroup>
-  <ItemGroup>
-    <Import Include="Microsoft.VisualBasic" />
-    <Import Include="System" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CustomExportHtml.aspx" />
-    <Content Include="CustomExportPdf.aspx" />
-    <Content Include="Default.aspx" />
-    <Content Include="default.css" />
-    <Content Include="default.js" />
-    <Content Include="favicon.ico" />
-    <Content Include="Reports\Invoice.rpx" />
-    <Content Include="Reports\NwindLabels.rpx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="CustomExportHtml.aspx.vb">
-      <DependentUpon>CustomExportHtml.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CustomExportPdf.aspx.vb">
-      <DependentUpon>CustomExportPdf.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.vb">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.vb" />
-    <Compile Include="Properties\Resource.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource.resx</DependentUpon>
-    </Compile>
-    <Compile Include="RdlxHandler.vb" />
-    <Compile Include="RpxHandler.vb" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_LocalResources\CustomExportPdf.aspx.resx" />
-    <EmbeddedResource Include="CustomExportHtml.aspx.resx">
-      <DependentUpon>CustomExportHtml.aspx.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomExportPdf.aspx.resx">
-      <DependentUpon>CustomExportPdf.aspx.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Default.aspx.resx">
-      <DependentUpon>Default.aspx.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="licenses.licx" />
-    <EmbeddedResource Include="Properties\Resource.resx">
-      <CustomToolNamespace>My.Resources</CustomToolNamespace>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.Designer.vb</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Code\" />
-    <Folder Include="bin\" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Gcef.Data.DataEngine">
       <Version>3.1.0</Version>
@@ -146,79 +15,76 @@
       <Version>3.1.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Chart">
-      <Version>16.1.1</Version>
+      <Version>16.1.2</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Core.DataProviders">
       <Version>2.1.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Core.Document">
-      <Version>3.2.0</Version>
+      <Version>3.3.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Core.Document.Drawing.Gc">
-      <Version>3.2.0</Version>
+      <Version>3.3.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Core.Document.Drawing.Gdi">
-      <Version>3.2.0</Version>
+      <Version>3.3.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Core.Export.Pdf.Section">
-      <Version>3.2.0</Version>
+      <Version>3.3.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Core.Drawing.Gc">
-      <Version>3.2.0</Version>
+      <Version>3.3.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Core.Drawing.Gdi">
-      <Version>3.2.0</Version>
+      <Version>3.3.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Core.Export.Html.Page">
-      <Version>3.2.0</Version>
+      <Version>3.3.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Core.Export.Pdf.Page">
-      <Version>3.2.0</Version>
+      <Version>3.3.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Core.Export.Svg.Page">
-      <Version>3.2.0</Version>
+      <Version>3.3.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Core.Rdl">
-      <Version>3.2.0</Version>
+      <Version>3.3.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Core.Rendering">
-      <Version>3.2.0</Version>
+      <Version>3.3.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Core.Scripting">
-      <Version>3.2.0</Version>
+      <Version>3.3.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Core.Svg">
-      <Version>1.0.1</Version>
+      <Version>1.0.2</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports">
-      <Version>16.1.1</Version>
+      <Version>16.2.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Document">
-      <Version>16.1.1</Version>
+      <Version>16.2.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Export.Html">
-      <Version>16.1.1</Version>
+      <Version>16.2.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.ActiveReports.Export.Pdf">
-      <Version>16.1.1</Version>
+      <Version>16.2.0</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.DataVisualization.Chart">
       <Version>0.4.77</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.Documents.Imaging.Windows">
-      <Version>5.1.0.790</Version>
+      <Version>5.1.0.796</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.Documents.DX.Windows">
-      <Version>5.1.0.790</Version>
+      <Version>5.1.0.796</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.Documents.Imaging">
-      <Version>5.1.0.790</Version>
+      <Version>5.1.0.796</Version>
     </PackageReference>
     <PackageReference Include="GrapeCity.Documents.Pdf">
-      <Version>5.1.0.790</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces">
-      <Version>5.0.0</Version>
+      <Version>5.1.0.796</Version>
     </PackageReference>
     <PackageReference Include="Portable.BouncyCastle">
       <Version>1.8.2</Version>
@@ -231,9 +97,6 @@
     </PackageReference>
     <PackageReference Include="System.Numerics.Vectors">
       <Version>4.5.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
-      <Version>5.0.0</Version>
     </PackageReference>
     <PackageReference Include="System.Text.Encodings.Web">
       <Version>5.0.1</Version>
@@ -248,25 +111,25 @@
       <Version>4.5.0</Version>
     </PackageReference>
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
-  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
-        <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51979/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
-        </WebProjectProperties>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
+  <ItemGroup>
+    <None Include="Web.config">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\Resources.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

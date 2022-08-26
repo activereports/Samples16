@@ -17,8 +17,9 @@ Partial Public Class ProductList
 	Private WithEvents PageFooter As GrapeCity.ActiveReports.SectionReportModel.PageFooter
 	<System.Diagnostics.DebuggerStepThrough()> _
 	Private Sub InitializeComponent()
-		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProductList))
-		Me.PageHeader = New GrapeCity.ActiveReports.SectionReportModel.PageHeader()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProductList))
+        Me.CompatibilityMode = ActiveReports.Document.CompatibilityModes.CrossPlatform
+        Me.PageHeader = New GrapeCity.ActiveReports.SectionReportModel.PageHeader()
 		Me.Shape1 = New GrapeCity.ActiveReports.SectionReportModel.Shape()
 		Me.LabelProductList = New GrapeCity.ActiveReports.SectionReportModel.Label()
 		Me.LabelProductName = New GrapeCity.ActiveReports.SectionReportModel.Label()

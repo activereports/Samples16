@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ActiveReportsLayout Version="3.2" PrintWidth="8640" DocumentName="ActiveReports Document" ScriptLang="C#" MasterReport="0">
+<ActiveReportsLayout Version="3.4" PrintWidth="8640" DocumentName="ActiveReports Document" ScriptLang="VB.NET" MasterReport="0" CompatibilityMode="CrossPlatform">
   <StyleSheet>
     <Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; ddo-char-set: 186" />
     <Style Name="Heading1" Value="font-family: Arial; font-size: 16pt; font-style: normal; font-weight: bold" />
@@ -9,11 +9,7 @@
   <Sections>
     <Section Type="Detail" Name="Detail" Height="5470.999" BackColor="16777215">
       <Control Type="AR.ChartControl" Name="ChartControl" Left="0" Top="0" Width="8496" Height="5040" ImageType="0">
-        <AccessibleDescription special-value="null" />
-        <AccessibleName special-value="null" />
-        <AccessibleRole>Default</AccessibleRole>
         <AutoRefresh>True</AutoRefresh>
-        <BackColor>Transparent</BackColor>
         <Backdrop>
           <ContextMenu special-value="null" />
           <Style>Gradient</Style>
@@ -24,9 +20,9 @@
           <Picture special-value="null" />
           <PictureAlignment>Stretched</PictureAlignment>
           <Alpha>255</Alpha>
+          <HasTransparency>False</HasTransparency>
           <AntiAliasMode>Auto</AntiAliasMode>
         </Backdrop>
-        <BackgroundImage special-value="null" />
         <Border>
           <Line>
             <Color>Transparent</Color>
@@ -36,7 +32,6 @@
           <ShadowWeight>0</ShadowWeight>
           <ShadowColor>Black</ShadowColor>
         </Border>
-        <CausesValidation>True</CausesValidation>
         <ChartAreas>
           <ChartArea id="282453f8-2a7a-4d84-930e-bda5b12aa74f">
             <Backdrop>
@@ -49,6 +44,7 @@
               <Picture special-value="null" />
               <PictureAlignment>Stretched</PictureAlignment>
               <Alpha>255</Alpha>
+              <HasTransparency>True</HasTransparency>
               <AntiAliasMode>Auto</AntiAliasMode>
             </Backdrop>
             <Border>
@@ -73,6 +69,7 @@
                 <Picture special-value="null" />
                 <PictureAlignment>Stretched</PictureAlignment>
                 <Alpha>255</Alpha>
+                <HasTransparency>False</HasTransparency>
                 <AntiAliasMode>Auto</AntiAliasMode>
               </Backdrop>
               <Visible>True</Visible>
@@ -90,6 +87,7 @@
                 <Picture special-value="null" />
                 <PictureAlignment>Stretched</PictureAlignment>
                 <Alpha>255</Alpha>
+                <HasTransparency>False</HasTransparency>
                 <AntiAliasMode>Auto</AntiAliasMode>
               </Backdrop>
               <Visible>True</Visible>
@@ -107,6 +105,7 @@
                 <Picture special-value="null" />
                 <PictureAlignment>Stretched</PictureAlignment>
                 <Alpha>255</Alpha>
+                <HasTransparency>False</HasTransparency>
                 <AntiAliasMode>Auto</AntiAliasMode>
               </Backdrop>
               <Visible>True</Visible>
@@ -483,17 +482,11 @@
           </ChartArea>
         </ChartAreas>
         <ColorPalette>Default</ColorPalette>
-        <CurrentDesigner special-value="null" />
-        <Cursor>Default</Cursor>
-        <DataSourceDirect special-value="null" />
         <DeviceMode>None</DeviceMode>
-        <Font>Arial, 9pt</Font>
-        <ForeColor>ControlText</ForeColor>
         <GridLayout>
           <Columns>1</Columns>
           <Rows>1</Rows>
         </GridLayout>
-        <ImeMode>NoControl</ImeMode>
         <IsDesignMode>True</IsDesignMode>
         <Legends>
           <Legend id="081acc2c-af52-4b63-b9e2-ec6a7b45c0a5">
@@ -507,6 +500,7 @@
               <Picture special-value="null" />
               <PictureAlignment>Stretched</PictureAlignment>
               <Alpha>128</Alpha>
+              <HasTransparency>True</HasTransparency>
               <AntiAliasMode>Auto</AntiAliasMode>
             </Backdrop>
             <Border>
@@ -530,6 +524,7 @@
                 <Picture special-value="null" />
                 <PictureAlignment>Stretched</PictureAlignment>
                 <Alpha>255</Alpha>
+                <HasTransparency>False</HasTransparency>
                 <AntiAliasMode>Auto</AntiAliasMode>
               </Backdrop>
               <Visible>True</Visible>
@@ -568,6 +563,7 @@
                 <Picture special-value="null" />
                 <PictureAlignment>Stretched</PictureAlignment>
                 <Alpha>255</Alpha>
+                <HasTransparency>True</HasTransparency>
                 <AntiAliasMode>Auto</AntiAliasMode>
               </Backdrop>
               <Visible>True</Visible>
@@ -614,7 +610,6 @@
             <AntiAliasMode>Auto</AntiAliasMode>
           </Legend>
         </Legends>
-        <RightToLeft>No</RightToLeft>
         <Series>
           <Series id="bc9420c6-9751-45c6-a619-a74b728f0b45">
             <ValueMemberX special-value="null" />
@@ -636,6 +631,7 @@
                 <Picture special-value="null" />
                 <PictureAlignment>Stretched</PictureAlignment>
                 <Alpha>255</Alpha>
+                <HasTransparency>False</HasTransparency>
                 <AntiAliasMode>Auto</AntiAliasMode>
               </BodyDownswingBackdrop>
               <BodyUpswingBackdrop type="Backdrop">
@@ -647,6 +643,7 @@
                 <Picture special-value="null" />
                 <PictureAlignment>Stretched</PictureAlignment>
                 <Alpha>255</Alpha>
+                <HasTransparency>False</HasTransparency>
                 <AntiAliasMode>Auto</AntiAliasMode>
               </BodyUpswingBackdrop>
               <WickLine type="Line">
@@ -719,8 +716,6 @@
             <AntiAliasMode>Auto</AntiAliasMode>
           </Series>
         </Series>
-        <Text>
-        </Text>
         <Titles>
           <Title id="aa845648-b2e9-434e-9328-0cb0b5bee25e">
             <Text>Candle chart</Text>
@@ -733,6 +728,7 @@
               <Picture special-value="null" />
               <PictureAlignment>Stretched</PictureAlignment>
               <Alpha>255</Alpha>
+              <HasTransparency>False</HasTransparency>
               <AntiAliasMode>Auto</AntiAliasMode>
             </Backdrop>
             <Visible>True</Visible>
@@ -764,17 +760,13 @@
     </Section>
   </Sections>
   <ReportComponentTray />
-  <Script><![CDATA[public void ActiveReport_PageStart()
-{
-	ChartControl.ChartAreas[0].Axes["AxisX"].Labels.Add("Monday");
-	ChartControl.ChartAreas[0].Axes["AxisX"].Labels.Add("Tuesday");
-	ChartControl.ChartAreas[0].Axes["AxisX"].Labels.Add("Wednesday");
-	ChartControl.ChartAreas[0].Axes["AxisX"].Labels.Add("Thursday");
-	ChartControl.ChartAreas[0].Axes["AxisX"].Labels.Add("Friday");
-}
-
-
-]]></Script>
+  <Script><![CDATA[Public Sub ActiveReport_PageStart()
+	ChartControl.ChartAreas(0).Axes("AxisX").Labels.Add("Monday")
+	ChartControl.ChartAreas(0).Axes("AxisX").Labels.Add("Tuesday")
+	ChartControl.ChartAreas(0).Axes("AxisX").Labels.Add("Wednesday")
+	ChartControl.ChartAreas(0).Axes("AxisX").Labels.Add("Thursday")
+	ChartControl.ChartAreas(0).Axes("AxisX").Labels.Add("Friday")
+End Sub]]></Script>
   <PageSettings />
   <Parameters />
 </ActiveReportsLayout>

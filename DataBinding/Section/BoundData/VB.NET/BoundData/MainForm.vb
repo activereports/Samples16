@@ -15,9 +15,6 @@ Public Class MainForm
 	Public Sub New()
 		MyBase.New()
 		Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
-#If NETCOREAPP3_1_OR_GREATER
-		Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled)
-#End If
 		'Required for Windows Form Designer support
 		'
 		InitializeComponent()
@@ -429,14 +426,14 @@ Public Class MainForm
 		'Applying specified connection string to data source
 		csv.ConnectionString = connectionString
 
-		'Create the report and assign the data source.
-		Dim productList As New ProductList With {
-			.ResourceLocator = New DefaultResourceLocator(New Uri(Path.GetDirectoryName(Application.ExecutablePath) + "\")),
-			.DataSource = csv
-		}
+        'Create the report and assign the data source.
+        Dim productList As New ProductList With {
+            .ResourceLocator = New DefaultResourceLocator(New Uri(Path.GetDirectoryName(Application.ExecutablePath) + "\")),
+            .DataSource = csv
+        }
 
-		'Run and view the report
-		arvMain.LoadDocument(productList)
+        'Run and view the report
+        arvMain.LoadDocument(productList)
 
 		Cursor = Cursors.Arrow
 

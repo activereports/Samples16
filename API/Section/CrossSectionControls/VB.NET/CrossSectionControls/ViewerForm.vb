@@ -10,9 +10,6 @@ Public Class ViewerForm
 	End Enum
 	
 	Sub New()
-#If NETCOREAPP3_1_OR_GREATER
-		Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled)
-#End If
 		Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
 		InitializeComponent()
 	End Sub

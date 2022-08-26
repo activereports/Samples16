@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ActiveReportsLayout Version="3.4" PrintWidth="9375" MaxPages="100" DocumentName="ActiveReports Document" ScriptLang="C#" MasterReport="0">
+<ActiveReportsLayout Version="3.4" PrintWidth="9375" MaxPages="100" DocumentName="ActiveReports Document" ScriptLang="VB.NET" MasterReport="0" CompatibilityMode="CrossPlatform">
   <StyleSheet>
     <Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; ddo-char-set: 186" />
     <Style Name="Heading1" Value="font-family: Arial; font-size: 16pt; font-style: normal; font-weight: bold" />
@@ -58,57 +58,50 @@
   </Sections>
   <ReportComponentTray />
   <DataSources>
-    <DbDataSource Name="sqlite" Connect="Data Source=..\\..\\..\\..\\..\\..\\..\\..\\Data\\NWIND.db" SQL="SELECT * FROM Invoices WHERE Country = 'USA'" />
+    <DbDataSource Name="SQLITE" Connect="Data Source=..\\..\\..\\..\\..\\..\\..\\..\\Data\\NWIND.db" SQL="SELECT * FROM Invoices WHERE Country = 'USA'" />
   </DataSources>
   <CalculatedFields>
     <Field Name="BillingAddress" Formula="Customers.CompanyName + &quot;&#xA;&quot; + Address + &quot;&#xA;&quot; + City + &quot;, &quot; + Region + &quot;  &quot; + PostalCode" FieldType="None" />
     <Field Name="ShippingAddress" Formula="ShipName + &quot;&#xA;&quot; + ShipAddress + &quot;&#xA;&quot; + ShipCity + &quot;, &quot; + ShipRegion + &quot;  &quot; + ShipPostalCode" FieldType="None" />
     <Field Name="Total" Formula="Quantity * UnitPrice" FieldType="None" />
   </CalculatedFields>
-  <Script><![CDATA[using System;
-using System.Drawing;
+  <Script><![CDATA[Imports System
+Imports System.Drawing
 
-public void GFOrderID_BeforePrint()
-{
-((TextBox)rpt.Sections["GFOrderID"].Controls["txtTotal"]).Value = (System.Double)((TextBox)rpt.Sections["GFOrderID"].Controls["txtFreight"]).Value + (System.Double)((TextBox)rpt.Sections["GFOrderID"].Controls["txtSubTotal"]).Value;
-}
+Public Sub GFOrderID_BeforePrint()
+	DirectCast(rpt.Sections("GFOrderID").Controls("txtTotal"), TextBox).Value = CType(CType(rpt.Sections("GFOrderID").Controls("txtFreight"), TextBox).Value, System.Double) + CType(CType(rpt.Sections("GFOrderID").Controls("txtSubTotal"), TextBox).Value, System.Double)
+End Sub
 
-//Create member variables for alternating colors of detail rows
-private int _detailRowNumber;
-private Color _detailRowColor = Color.White;
-private Color _detailAlternateRowColor = Color.FromArgb(192, 173, 223);
-
-public void ActiveReport_ReportStart()
-{
-}
+'Create member variables for alternating colors of detail rows
+Private Dim _detailRowNumber As Integer
+Private Dim _detailRowColor As Color = Color.White
+Private Dim _detailAlternateRowColor As Color = Color.FromArgb(192, 173, 223)
 
 
-public void customerGroupFooter_Format()
-{
-	//Calculate the total based on values from textboxes in the group footer.
-	double subtotal = Convert.ToDouble(subtotalTextBox.Value);
-	double freight = Convert.ToDouble(freightTextBox.Value);
-	grandTotalTextBox.Value = String.Format("{0:C}", subtotal + freight);
-}
+Public Sub customerGroupFooter_Format()
+	'Calculate the total based on values from textboxes in the group footer.
+	Dim subtotal As Double = Convert.ToDouble(subtotalTextBox.Value)
+	Dim freight As Double = Convert.ToDouble(freightTextBox.Value)
+	grandTotalTextBox.Value = String.Format("{0:C}", subtotal + freight)
+End Sub
 
 
-public void Detail_Format()
-{
-	//Set alternating row colors
-	if (_detailRowNumber % 2 == 0)
-		Detail.BackColor = _detailRowColor;
-	else
-		Detail.BackColor = _detailAlternateRowColor;
+Public Sub Detail_Format()
+	'Set alternating row colors
+	If _detailRowNumber Mod 2 = 0 Then
+		Detail.BackColor = _detailRowColor
+	Else
+		Detail.BackColor = _detailAlternateRowColor
+	End If
 
-	_detailRowNumber++;
-}
+	_detailRowNumber += 1
+End Sub
 
 
-public void customerGroupHeader_Format()
-{
-	//Reset the detail row number when a new group begins
-	_detailRowNumber = 0;	
-}
+Public Sub customerGroupHeader_Format()
+	'Reset the detail row number when a new group begins
+	_detailRowNumber = 0	
+End Sub
 
 
 ]]></Script>

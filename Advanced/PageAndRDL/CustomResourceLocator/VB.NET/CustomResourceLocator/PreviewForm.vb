@@ -7,9 +7,6 @@ Public Class PreviewForm
 	Public Sub New(ByVal runtime As PageDocument)
 
 		' This call is required by the Windows Form Designer.
-#If NETCOREAPP3_1_OR_GREATER
-		Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled)
-#End If
 		InitializeComponent()
 		_reportRuntime = runtime
 		' Add any initialization after the InitializeComponent() call.

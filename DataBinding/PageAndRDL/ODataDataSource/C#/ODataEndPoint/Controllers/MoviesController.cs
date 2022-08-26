@@ -1,33 +1,41 @@
-﻿
-using System.Collections.Generic;
-using System.Data.OleDb;
-using System.Web.OData;
-using ODataDataSource.Models;
+﻿using Microsoft.Data.Sqlite;
+using Microsoft.AspNetCore.OData.Routing.Controllers;
+using ODataEndPoint.Models;
 
-namespace ODataDataSource.Controllers
+namespace ODataEndPoint.Controllers
 {
-	/// <summary>
-	/// Controller is based on article https://docs.microsoft.com/en-us/aspnet/web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
-	/// </summary>
 	public class MoviesController : ODataController
 	{
-		public  IList<Movie> Get()
+		private readonly IConfiguration _configuration;
+		private readonly IWebHostEnvironment _env;
+
+		public MoviesController(IConfiguration configuration, IWebHostEnvironment env)
+		{
+			_configuration = configuration;
+			_env = env;
+		}
+		
+		public IList<Movie> Get()
 		{
 			var movies = new List<Movie>();
 
-			var connStr = Utility.UpdateConnectionString(Properties.Resource.Reels);
-			var conn = new OleDbConnection(connStr);
+			var connStr = _configuration.GetSection("ConnectionStrings")["Reels"].Replace("$appPath$", _env.ContentRootPath);
+			var conn = new SqliteConnection(connStr);
 			conn.Open();
-			var cmd = new OleDbCommand("SELECT Movie.MovieID, Movie.Title, Movie.MPAA, Movie.YearReleased FROM Movie ORDER BY Movie.YearReleased", conn);
+			var cmd = new SqliteCommand("SELECT Movie.MovieID, Movie.Title, Movie.MPAA, Movie.YearReleased FROM Movie ORDER BY Movie.YearReleased", conn);
 			var dataReader = cmd.ExecuteReader();
 			while (dataReader.Read())
 			{
-				movies.Add(new Movie() { Id = (int)dataReader.GetValue(0), Title = dataReader.GetValue(1).ToString(), MPAA = dataReader.GetValue(2).ToString() , YearReleased = (int)dataReader.GetValue(3) });
+				movies.Add(new Movie
+				{
+					Id = Convert.ToInt32(dataReader.GetValue(0)),
+					Title = dataReader.GetValue(1).ToString()!,
+					MPAA = dataReader.GetValue(2).ToString()!,
+					YearReleased = Convert.ToInt32(dataReader.GetValue(3))
+				});
 			}
 			conn.Close();
-
 			return movies;
 		}
-
 	}
 }

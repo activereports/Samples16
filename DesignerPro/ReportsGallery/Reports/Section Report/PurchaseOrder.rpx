@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ActiveReportsLayout Version="3.4" PrintWidth="15595.2" DocumentName="ARNet Document" ScriptLang="C#" MasterReport="0" culture="en-US">
+<ActiveReportsLayout Version="3.4" PrintWidth="15595.2" DocumentName="ARNet Document" ScriptLang="C#" MasterReport="0" culture="en-US" CompatibilityMode="CrossPlatform">
   <StyleSheet>
     <Style Name="Normal" Value="font-style: normal; text-decoration: none; font-weight: normal; color: Black; font-size: 10pt; vertical-align: top; font-family: &quot;Arial&quot;; ddo-char-set: 186" />
   </StyleSheet>

@@ -19,8 +19,9 @@ Partial Public Class rptDesignChild
 	<System.Diagnostics.DebuggerStepThrough()> _
 	Private Sub InitializeComponent()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rptDesignChild))
-		Dim OleDBDataSource1 As GrapeCity.ActiveReports.Data.DbDataSource = New GrapeCity.ActiveReports.Data.DbDataSource(System.Data.SQLite.SQLiteFactory.Instance)
-		Me.txtCustomerID1 = New GrapeCity.ActiveReports.SectionReportModel.TextBox()
+        Dim OleDBDataSource1 As GrapeCity.ActiveReports.Data.DbDataSource = New GrapeCity.ActiveReports.Data.DbDataSource(System.Data.SQLite.SQLiteFactory.Instance)
+        Me.CompatibilityMode = ActiveReports.Document.CompatibilityModes.CrossPlatform
+        Me.txtCustomerID1 = New GrapeCity.ActiveReports.SectionReportModel.TextBox()
 		Me.txtCompanyName1 = New GrapeCity.ActiveReports.SectionReportModel.TextBox()
 		Me.txtContactName1 = New GrapeCity.ActiveReports.SectionReportModel.TextBox()
 		Me.txtCountry1 = New GrapeCity.ActiveReports.SectionReportModel.TextBox()

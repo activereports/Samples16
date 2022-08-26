@@ -1,32 +1,40 @@
-﻿Imports System.Collections.ObjectModel
-Imports System.Data.OleDb
-Imports System.Web.Http
-Imports System.Web.OData
+﻿Imports Microsoft.Data.Sqlite
+Imports Microsoft.AspNetCore.Hosting
+Imports Microsoft.AspNetCore.OData.Routing.Controllers
+Imports Microsoft.Extensions.Configuration
+Imports ODataEndPoint.Models
 
-''' <summary>
-''' Controller is based on article https://docs.microsoft.com/en-us/aspnet/web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
-''' </summary>
-Public Class MoviesController
-	Inherits ODataController
-	Public Function [Get]() As IList(Of Movie)
-		Dim movies As New List(Of Movie)()
+Namespace Controllers
+	Public Class MoviesController
+		Inherits ODataController
+		
+		Dim ReadOnly _configuration As IConfiguration
+		Dim ReadOnly _env As IWebHostEnvironment
 
-		Dim connStr = UpdateConnectionString(My.Resources.Reels)
-		Dim conn As New OleDbConnection(connStr)
-		conn.Open()
-		Dim cmd As New OleDbCommand("SELECT Movie.MovieID, Movie.Title, Movie.MPAA, Movie.YearReleased FROM Movie ORDER BY Movie.YearReleased", conn)
-		Dim dataReader As OleDbDataReader = cmd.ExecuteReader()
-		While dataReader.Read()
-			movies.Add(New Movie() With {
-				.Id = CType(dataReader.GetValue(0), Integer),
-				.Title = dataReader.GetValue(1).ToString(),
-				.MPAA = dataReader.GetValue(2).ToString(),
-				.YearReleased = CType(dataReader.GetValue(3), Integer)
-			})
-		End While
-		conn.Close()
+		Public Sub New(configuration As IConfiguration, env As IWebHostEnvironment)
+			_configuration = configuration
+			_env = env
+		End Sub
+		
+		Public Function [Get]() As IList(Of Movie)
+			Dim movies = New List(Of Movie)()
+			
+			Dim connStr = _configuration.GetSection("ConnectionStrings")("Reels").Replace("$appPath$", _env.ContentRootPath)
+			Dim conn As New SqliteConnection(connStr)
+			conn.Open()
+			Dim cmd As New SqliteCommand("SELECT Movie.MovieID, Movie.Title, Movie.MPAA, Movie.YearReleased FROM Movie ORDER BY Movie.YearReleased", conn)
+			Dim dataReader As SqliteDatareader = cmd.ExecuteReader()
+			While dataReader.Read()
+				movies.Add(New Movie() With {
+					          .Id = CType(dataReader.GetValue(0), Integer),
+					          .Title = dataReader.GetValue(1).ToString(),
+					          .MPAA = dataReader.GetValue(2).ToString(),
+					          .YearReleased = CType(dataReader.GetValue(3), Integer)
+					          })
+			End While
 
-		Return movies
-	End Function
-
-End Class
+			conn.Close()
+			Return movies
+		End Function
+	End Class
+End NameSpace

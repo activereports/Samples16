@@ -28,9 +28,6 @@ Namespace My
 			Me.EnableVisualStyles = True
 			Me.SaveMySettingsOnExit = True
 			Me.ShutdownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
-#If NETCOREAPP3_1_OR_GREATER
-            Me.HighDpiMode = HighDpiMode.DpiUnawareGdiScaled
-#End If
 		End Sub
 
 		<Global.System.Diagnostics.DebuggerStepThroughAttribute()>

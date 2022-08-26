@@ -23,9 +23,6 @@ Public Class PrintMultiplePages
 	Public Sub New()
 		MyBase.New()
 		Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
-#If NETCOREAPP3_1_OR_GREATER
-		Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled)
-#End If
 		'This call is required by the Windows Form Designer.
 		InitializeComponent()
 	End Sub

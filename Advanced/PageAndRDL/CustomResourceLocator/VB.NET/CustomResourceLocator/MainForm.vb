@@ -9,10 +9,7 @@ Public Class MainForm
 
 	Private Sub MainForm_Load(ByVal sender As System.Object, ByVal e As EventArgs) Handles MyBase.Load
 		Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
-#If NETCOREAPP3_1_OR_GREATER
-		Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled)
-#End If
-		RichTextBox.Rtf = My.Resources.Description
+		richTextBox.Rtf = My.Resources.Description
 		Dim myPicturesPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)
 		LoadImages(myPicturesPath, myPicturesPath + "\")
 	End Sub

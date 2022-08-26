@@ -7,8 +7,9 @@ Partial Class rptInheritChild
 
 
 <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rptInheritChild))
-		Me.TextBox = New GrapeCity.ActiveReports.SectionReportModel.TextBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rptInheritChild))
+        Me.CompatibilityMode = ActiveReports.Document.CompatibilityModes.CrossPlatform
+        Me.TextBox = New GrapeCity.ActiveReports.SectionReportModel.TextBox()
 		Me.TextBox1 = New GrapeCity.ActiveReports.SectionReportModel.TextBox()
 		Me.TextBox2 = New GrapeCity.ActiveReports.SectionReportModel.TextBox()
 		Me.TextBox3 = New GrapeCity.ActiveReports.SectionReportModel.TextBox()

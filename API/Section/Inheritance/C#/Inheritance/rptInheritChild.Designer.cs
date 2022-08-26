@@ -17,6 +17,7 @@ namespace GrapeCity.ActiveReports.Sample.Inheritance
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptInheritChild));
+			this.CompatibilityMode = ActiveReports.Document.CompatibilityModes.CrossPlatform;
 			this.TextBox = new GrapeCity.ActiveReports.SectionReportModel.TextBox();
 			this.TextBox1 = new GrapeCity.ActiveReports.SectionReportModel.TextBox();
 			this.TextBox2 = new GrapeCity.ActiveReports.SectionReportModel.TextBox();

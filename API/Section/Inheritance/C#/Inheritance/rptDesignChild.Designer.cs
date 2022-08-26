@@ -27,6 +27,7 @@ namespace GrapeCity.ActiveReports.Sample.Inheritance
 			GrapeCity.ActiveReports.Data.DbDataSource oleDBDataSource1 = new GrapeCity.ActiveReports.Data.DbDataSource(SQLiteFactory.Instance);
 			oleDBDataSource1.ConnectionString = _resource.GetString("ConnectionString");
 			oleDBDataSource1.SQL = "Select * from Customers Order By CustomerID";
+			this.CompatibilityMode = ActiveReports.Document.CompatibilityModes.CrossPlatform;
 			this.txtCustomerID1 = new GrapeCity.ActiveReports.SectionReportModel.TextBox();
 			this.txtCompanyName1 = new GrapeCity.ActiveReports.SectionReportModel.TextBox();
 			this.txtContactName1 = new GrapeCity.ActiveReports.SectionReportModel.TextBox();

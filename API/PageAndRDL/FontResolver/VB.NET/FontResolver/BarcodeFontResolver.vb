@@ -1,5 +1,4 @@
 ﻿Imports GrapeCity.Documents.Text
-Imports GrapeCity.Documents.Text.Windows
 
 Friend NotInheritable Class BarcodeFontResolver
 	Implements IFontResolver
@@ -9,7 +8,7 @@ Friend NotInheritable Class BarcodeFontResolver
 
 	Private Sub New()
 		_fonts = New Documents.Text.FontCollection()
-		FontLinkHelper.UpdateFontLinks(_fonts, True)
+        _fonts.RegisterDirectory(Environment.GetFolderPath(Environment.SpecialFolder.Fonts))
 		_fonts.RegisterDirectory("../../../../../Fonts")
 		_fonts.DefaultFont = _fonts.FindFamilyName("Arial")
 	End Sub

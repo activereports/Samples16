@@ -14,7 +14,7 @@ namespace GrapeCity.ActiveReports.Viewer.Win
 		static void Main(string[] args)
 		{
 			Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-#if NETCOREAPP3_1_OR_GREATER
+#if NET6_0_OR_GREATER
 			Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled);
 #endif
 			Application.EnableVisualStyles();

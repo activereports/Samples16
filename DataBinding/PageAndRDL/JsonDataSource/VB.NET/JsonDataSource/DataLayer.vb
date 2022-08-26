@@ -9,24 +9,16 @@ Imports System.Text.Json
 ' Provides the data used in the sample.
 Friend NotInheritable Class DataLayer
 	Public Shared Function CreateData() As String
-		Const sourceUrl As String = "http://localhost:10395/WebService.asmx/GetJson"
+		Const sourceUrl As String = "http://localhost:10395/customers/GetJson"
 		Dim responseText As String = Nothing
 
 		Using httpClient = New HttpClient()
 			httpClient.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse("Basic " & Convert.ToBase64String(Encoding.[Default].GetBytes("admin:1")))
 			httpClient.DefaultRequestHeaders.Accept.Add(New MediaTypeWithQualityHeaderValue("application/json"))
-			Dim request = New HttpRequestMessage(HttpMethod.Post, sourceUrl) With {
-				    .Content = New StringContent(String.Empty, Encoding.UTF8, "application/json")
-				    }
+			Dim request = New HttpRequestMessage(HttpMethod.Get, sourceUrl)
 			Dim response = httpClient.SendAsync(request).Result
 			Dim json = response.Content.ReadAsStringAsync().Result
-			Dim values = JsonSerializer.Deserialize(Of Dictionary(Of String, String))(json)
-
-			If values.ContainsKey("d") Then
-				responseText = values("d")
-			End If
+			Return json
 		End Using
-
-		Return responseText
 	End Function
 End Class

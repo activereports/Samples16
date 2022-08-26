@@ -77,11 +77,11 @@ Public Class PDFDigitalSignature
 			' For X509Certificate2 class, etc. Please refer to the site of Microsoft.
 			' 　[X509Certificate2 クラス(System.Security.Cryptography.X509Certificates)]
 			' 　http://msdn.microsoft.com/ja-jp/library/system.security.cryptography.x509certificates.x509certificate2.aspx
-			settings.SignatureCertificateFileName = Path.GetFullPath("..//..//..//GrapeCity.pfx")
-			settings.SignatureCertificatePassword = "password"
+			settings.SignatureCertificateFileName = Path.GetFullPath("..//..//..//certificate.pfx")
+			settings.SignatureCertificatePassword = "test"
 			' 
 			If chkTimeStamp.Checked Then
-				settings.SignatureTimeStamp = New TimeStamp("https://freetsa.org/tsr", "", "")
+				settings.SignatureTimeStamp = New TimeStamp("https://tsa.wotrus.com", "", "")
 			End If
 
 			' Sets the time stamp.

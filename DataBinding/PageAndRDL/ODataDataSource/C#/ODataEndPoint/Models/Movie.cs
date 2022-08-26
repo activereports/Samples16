@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ODataDataSource.Models
+namespace ODataEndPoint.Models
 {
 	public class Movie
 	{

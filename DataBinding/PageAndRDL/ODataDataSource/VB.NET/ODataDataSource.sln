@@ -7,7 +7,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ObjectDataSourceClient", "O
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "JsonDataSourceClient", "JsonDataSourceClient\JsonDataSourceClient.vbproj", "{C4528690-6303-47CB-823F-36D38DE71BBA}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ODataEndPoint", "ODataEndPoint\ODataEndPoint.vbproj", "{B5A3491C-4BAD-4E0C-8693-E9BEF0A6D92B}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ODataEndPoint", "ODataEndPoint\ODataEndPoint.vbproj", "{3DF91252-FF38-46F3-9CA8-02907B56F85E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{C4528690-6303-47CB-823F-36D38DE71BBA}.Debug|AnyCPU.Build.0 = Debug|Any CPU
 		{C4528690-6303-47CB-823F-36D38DE71BBA}.Release|AnyCPU.ActiveCfg = Release|Any CPU
 		{C4528690-6303-47CB-823F-36D38DE71BBA}.Release|AnyCPU.Build.0 = Release|Any CPU
-		{B5A3491C-4BAD-4E0C-8693-E9BEF0A6D92B}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
-		{B5A3491C-4BAD-4E0C-8693-E9BEF0A6D92B}.Debug|AnyCPU.Build.0 = Debug|Any CPU
-		{B5A3491C-4BAD-4E0C-8693-E9BEF0A6D92B}.Release|AnyCPU.ActiveCfg = Release|Any CPU
-		{B5A3491C-4BAD-4E0C-8693-E9BEF0A6D92B}.Release|AnyCPU.Build.0 = Release|Any CPU
+		{3DF91252-FF38-46F3-9CA8-02907B56F85E}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
+		{3DF91252-FF38-46F3-9CA8-02907B56F85E}.Debug|AnyCPU.Build.0 = Debug|Any CPU
+		{3DF91252-FF38-46F3-9CA8-02907B56F85E}.Release|AnyCPU.ActiveCfg = Release|Any CPU
+		{3DF91252-FF38-46F3-9CA8-02907B56F85E}.Release|AnyCPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
