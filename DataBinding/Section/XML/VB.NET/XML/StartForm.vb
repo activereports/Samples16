@@ -12,9 +12,6 @@ Public Class StartForm
 	Public Sub New()
 		MyBase.New()
 		Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
-#If NETCOREAPP3_1_OR_GREATER
-		Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled)
-#End If
 		' Required designer variable.
 		InitializeComponent()
 	End Sub

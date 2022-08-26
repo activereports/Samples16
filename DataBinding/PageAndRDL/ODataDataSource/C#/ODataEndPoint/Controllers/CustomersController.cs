@@ -1,34 +1,40 @@
 ﻿using System.Collections.ObjectModel;
-using System.Data.OleDb;
-using System.Linq;
-using System.Web.Http;
-using System.Web.OData;
-using ODataDataSource.Models;
+using Microsoft.Data.Sqlite;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
+using Microsoft.AspNetCore.OData.Routing.Controllers;
+using ODataEndPoint.Models;
 
-namespace ODataDataSource.Controllers
+namespace ODataEndPoint.Controllers
 {
-	/// <summary>
-	/// Controller is based on article https://docs.microsoft.com/en-us/aspnet/web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
-	/// </summary>
-	[EnableQuery]
 	public class CustomersController : ODataController
 	{
-		public IHttpActionResult Get()
+		private readonly IConfiguration _configuration;
+		private readonly IWebHostEnvironment _env;
+
+		public CustomersController(IConfiguration configuration, IWebHostEnvironment env)
 		{
-			var connStr = Utility.UpdateConnectionString(Properties.Resource.Nwind);
-			var conn = new OleDbConnection(connStr);
+			_configuration = configuration;
+			_env = env;
+		}
+		
+		[EnableQuery]
+		public IActionResult Get()
+		{
+			var connStr = _configuration.GetSection("ConnectionStrings")["Nwind"].Replace("$appPath$", _env.ContentRootPath);
+			var conn = new SqliteConnection(connStr);
 			conn.Open();
 			var customers = new Collection<Customer>();
-			var cmd = new OleDbCommand("select customers.Customerid, customers.CompanyName, customers.ContactName, customers.Address from customers", conn);
+			var cmd = new SqliteCommand("select customers.Customerid, customers.CompanyName, customers.ContactName, customers.Address from customers", conn);
 			var dataReader = cmd.ExecuteReader();
 			while (dataReader.Read())
 			{
-				customers.Add(new Customer()
+				customers.Add(new Customer
 				{
-					CustomerID = dataReader.GetValue(0).ToString(),
-					CompanyName = dataReader.GetValue(1).ToString(),
-					ContactName = dataReader.GetValue(2).ToString(),
-					Address = dataReader.GetValue(3).ToString(),
+					CustomerID = dataReader.GetValue(0).ToString()!,
+					CompanyName = dataReader.GetValue(1).ToString()!,
+					ContactName = dataReader.GetValue(2).ToString()!,
+					Address = dataReader.GetValue(3).ToString()!,
 				});
 			}
 			conn.Close();

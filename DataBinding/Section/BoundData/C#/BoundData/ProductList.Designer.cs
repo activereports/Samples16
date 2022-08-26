@@ -28,6 +28,7 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductList));
+			this.CompatibilityMode = ActiveReports.Document.CompatibilityModes.CrossPlatform;
 			this.label1 = new GrapeCity.ActiveReports.SectionReportModel.Label();
 			this.label2 = new GrapeCity.ActiveReports.SectionReportModel.Label();
 			this.label3 = new GrapeCity.ActiveReports.SectionReportModel.Label();

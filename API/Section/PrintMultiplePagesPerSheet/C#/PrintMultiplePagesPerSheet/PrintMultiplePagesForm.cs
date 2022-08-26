@@ -40,7 +40,7 @@ namespace GrapeCity.ActiveReports.Samples.PrintMultiplePagesPerSheet
 		static void Main() 
 		{
 			Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-#if NETCOREAPP3_1_OR_GREATER
+#if NET6_0_OR_GREATER
 			Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled);
 #endif
 			Application.Run(new PrintMultiplePagesForm());

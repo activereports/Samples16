@@ -1,4 +1,4 @@
-﻿using GrapeCity.Documents.Text.Windows;
+﻿using System;
 
 namespace GrapeCity.ActiveReports.Samples.FontResolver
 {
@@ -12,7 +12,7 @@ namespace GrapeCity.ActiveReports.Samples.FontResolver
 		{
 			_fonts = new Documents.Text.FontCollection();
 			// load Windows fonts
-			FontLinkHelper.UpdateFontLinks(_fonts, true);
+			_fonts.RegisterDirectory(Environment.GetFolderPath(Environment.SpecialFolder.Fonts));
 			// load barcode fonts
 			_fonts.RegisterDirectory("../../../../../Fonts");
 			_fonts.DefaultFont = _fonts.FindFamilyName("Arial");

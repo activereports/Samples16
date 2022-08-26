@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonDataSource", "JsonDataSource\JsonDataSource.csproj", "{34CFEE5E-2D97-4DCE-98EA-5C6924D1CE89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "Web Service\WebService.csproj", "{508A19C1-FE6F-4199-A09A-E0A880A2709D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "Web Service\WebService.csproj", "{709693B1-B417-4692-891E-9CFEABB90FA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +21,10 @@ Global
 		{508A19C1-FE6F-4199-A09A-E0A880A2709D}.Debug|AnyCPU.Build.0 = Debug|Any CPU
 		{508A19C1-FE6F-4199-A09A-E0A880A2709D}.Release|AnyCPU.ActiveCfg = Release|Any CPU
 		{508A19C1-FE6F-4199-A09A-E0A880A2709D}.Release|AnyCPU.Build.0 = Release|Any CPU
+		{709693B1-B417-4692-891E-9CFEABB90FA0}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
+		{709693B1-B417-4692-891E-9CFEABB90FA0}.Debug|AnyCPU.Build.0 = Debug|Any CPU
+		{709693B1-B417-4692-891E-9CFEABB90FA0}.Release|AnyCPU.ActiveCfg = Release|Any CPU
+		{709693B1-B417-4692-891E-9CFEABB90FA0}.Release|AnyCPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

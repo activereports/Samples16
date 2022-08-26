@@ -141,9 +141,6 @@ Public Class ReportsForm
 
 	Shared Sub New()
 		Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
-#If NETCOREAPP3_1_OR_GREATER
-		Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled)
-#End If
 		Dim loaded As XDocument = XDocument.Load("ReportsGallery.config")
 		_folderPath = loaded.Descendants("FolderPath").[Select](Function(t) t.Value.ToString()).ToList()(0)
 		Dim reportbasefolder As New DirectoryInfo(FolderPath)

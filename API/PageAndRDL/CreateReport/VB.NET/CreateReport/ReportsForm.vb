@@ -4,9 +4,6 @@ Imports System.Text
 Public Class ReportsForm
 
 	Public Sub New()
-#If NETCOREAPP3_1_OR_GREATER
-		Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled)
-#End If
         'Necessary designer variable.
 		Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
         InitializeComponent()

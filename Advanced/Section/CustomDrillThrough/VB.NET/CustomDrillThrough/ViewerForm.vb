@@ -11,10 +11,6 @@ Public Class ViewerForm
 	Public Sub New()
 		MyBase.New()
 		Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
-#If NETCOREAPP3_1_OR_GREATER
-		Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled)
-#End If
-		
 		InitializeComponent()
 		_loadMainReport = True
 	End Sub
@@ -22,9 +18,6 @@ Public Class ViewerForm
 	Public Sub New(ByVal loadMainReport As Boolean)
 		MyBase.New()
 		Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
-#If NETCOREAPP3_1_OR_GREATER
-		Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled)
-#End If
 		InitializeComponent()
 		_loadMainReport = loadMainReport
 	End Sub

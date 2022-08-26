@@ -5,9 +5,6 @@ Public Class MainForm
 	
 	Sub New()
 		Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
-#If NETCOREAPP3_1_OR_GREATER
-		Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled)
-#End If
 		InitializeComponent()
 	End Sub
 

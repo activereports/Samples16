@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ActiveReportsLayout Version="3.4" PrintWidth="8640" MaxPages="10" DocumentName="ActiveReports Document" ScriptLang="C#" MasterReport="0">
+<ActiveReportsLayout Version="3.4" PrintWidth="8640" MaxPages="10" DocumentName="ActiveReports Document" ScriptLang="VB.NET" MasterReport="0" CompatibilityMode="CrossPlatform">
   <StyleSheet>
     <Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; ddo-char-set: 186" />
     <Style Name="Heading1" Value="font-family: Arial; font-size: 16pt; font-style: normal; font-weight: bold" />
@@ -34,28 +34,26 @@
   </Sections>
   <ReportComponentTray />
   <DataSources>
-    <DbDataSource Name="sqlite" Connect="Data Source=..\\..\\..\\..\\..\\..\\..\\..\\Data\\NWIND.db" SQL="SELECT * FROM Order_Details ORDER BY OrderID" />
+    <DbDataSource Name="SQLITE" Connect="Data Source=..\\..\\..\\..\\..\\..\\..\\..\\Data\\NWIND.db" SQL="SELECT * FROM Order_Details ORDER BY OrderID" />
   </DataSources>
-  <Script><![CDATA[using System;
-using System.Globalization;
+  <Script><![CDATA[Imports System
+Imports System.Globalization
 
-public void ActiveReport_DataInitialize()
-{
-	rpt.Fields.Add("ExtendedPrice");
-}
+Public Sub ActiveReport_DataInitialize()
+	rpt.Fields.Add("ExtendedPrice")
+End Sub
 
 
-public bool ActiveReport_FetchData(bool eof)
-{
-	// Gather the value to be calculated from the bound data base.
-	double quantity = Convert.ToDouble(rpt.Fields["Quantity"].Value, CultureInfo.CurrentCulture);
-	double unitPrice = Convert.ToDouble(rpt.Fields["UnitPrice"].Value, CultureInfo.CurrentCulture);
-	double discount = Convert.ToDouble(rpt.Fields["Discount"].Value, CultureInfo.CurrentCulture);
+Public Function ActiveReport_FetchData(eof As Boolean) As Boolean
+	' Gather the value to be calculated from the bound data base.
+	Dim quantity As Double = Convert.ToDouble(rpt.Fields("Quantity").Value, CultureInfo.CurrentCulture)
+	Dim unitPrice As Double = Convert.ToDouble(rpt.Fields("UnitPrice").Value, CultureInfo.CurrentCulture)
+	Dim discount As Double = Convert.ToDouble(rpt.Fields("Discount").Value, CultureInfo.CurrentCulture)
 
-	// Perform the calculation for the calculated field.
-	rpt.Fields["ExtendedPrice"].Value = ((quantity * unitPrice) - (quantity * unitPrice * discount));
-	return eof;
-}
+	' Perform the calculation for the calculated field.
+	rpt.Fields("ExtendedPrice").Value = ((quantity * unitPrice) - (quantity * unitPrice * discount))
+	Return eof
+End Function
 
 
 ]]></Script>

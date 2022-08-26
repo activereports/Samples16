@@ -48,6 +48,7 @@ Private Sub InitializeComponent()
 		'ViewerForm
 		'
 		resources.ApplyResources(Me, "$this")
+		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.Controls.Add(Me.arvMain)
 		Me.Name = "ViewerForm"
 		Me.ResumeLayout(False)

@@ -31,13 +31,13 @@ Public Class ViewerForm
 	'Please do not modify it using the code editor.
 	
 	Private Sub runTimeRptBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles runTimeRptBtn.Click
-		Dim rpt As New rptInheritChild
-		arvMain.LoadDocument(rpt)
+        Dim rpt As New rptInheritChild
+        arvMain.LoadDocument(rpt)
 	End Sub
 
 	Private Sub designTimeRptBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles designTimeRptBtn.Click
-		Dim rpt As New rptDesignChild
-		arvMain.LoadDocument(rpt)
+        Dim rpt As New rptDesignChild
+        arvMain.LoadDocument(rpt)
 	End Sub
 
 End Class

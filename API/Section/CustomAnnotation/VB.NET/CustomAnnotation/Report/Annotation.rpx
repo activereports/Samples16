@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ActiveReportsLayout Version="3.4" PrintWidth="8640.722" MaxPages="100" DocumentName="ActiveReports Document" ScriptLang="C#" MasterReport="0">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ActiveReportsLayout Version="3.4" PrintWidth="8640.722" MaxPages="100" DocumentName="ActiveReports Document" ScriptLang="VB.NET" MasterReport="0" CompatibilityMode="CrossPlatform">
   <StyleSheet>
     <Style Name="Normal" Value="font-style: normal; text-decoration: none; font-weight: normal; color: Black; font-size: 10pt; vertical-align: top; font-family: &quot;Arial&quot;; ddo-char-set: 186" />
     <Style Name="Heading1" Value="font-size: 12pt; font-weight: bold; ddo-char-set: 204" />
@@ -44,42 +44,26 @@
   </Sections>
   <ReportComponentTray />
   <DataSources>
-    <DbDataSource Name="sqlite" Connect="Data Source=..\\..\\..\\..\\..\\..\\..\\..\\Data\\NWIND.db" SQL="SELECT * FROM Invoices ORDER BY Customers_CompanyName, OrderID" />
+    <DbDataSource Name="SQLITE" Connect="Data Source=..\\..\\..\\..\\..\\..\\..\\..\\Data\\NWIND.db" SQL="SELECT * FROM Invoices ORDER BY Customers_CompanyName, OrderID" />
   </DataSources>
-  <Script><![CDATA[public void ActiveReport_DataInitialize()
-{
-	rpt.Fields.Add("ExtendedPrice2");
-}
+  <Script><![CDATA[Public Sub ActiveReport_DataInitialize()
+	rpt.Fields.Add("ExtendedPrice2")
+End Sub
 
+Public Function ActiveReport_FetchData(eof As Boolean) As Boolean
+	rpt.Fields("ExtendedPrice2").Value = Convert.ToDouble(rpt.Fields("UnitPrice").Value) * Convert.ToDouble(rpt.Fields("Quantity").Value) * (1 - Convert.ToDouble(rpt.Fields("Discount").Value))* 1.05
+	Return eof
+End Function
 
-public bool ActiveReport_FetchData(bool eof)
-{
-	rpt.Fields["ExtendedPrice2"].Value	= Convert.ToDouble(rpt.Fields["UnitPrice"].Value)	* Convert.ToDouble(rpt.Fields["Quantity"].Value)* (1 - Convert.ToDouble(rpt.Fields["Discount"].Value))* 1.05;
-	return eof;
-}
+Public Sub GFOrderID_BeforePrint()
+	Me.txtTotal.Value = Convert.ToDouble(Me.txtFreight.Value) + Convert.ToDouble(Me.txtSubTotal.Value)
+End Sub
 
-
-public void GFOrderID_BeforePrint()
-{
-	this.txtTotal.Value	= Convert.ToDouble(this.txtFreight.Value)+ Convert.ToDouble(this.txtSubTotal.Value);
-}
-
-
-public void Detail_BeforePrint()
-{
-	if (Convert.ToDouble(this.txtDiscount.Value) == 0)
-	{
-		this.txtDiscount.Text = "";
-	}
-}
-
-
-public void ActiveReport_ReportStart()
-{
-	
-}
-
-
+Public Sub Detail_BeforePrint()
+	If Convert.ToDouble(Me.txtDiscount.Value) = 0 Then
+		Me.txtDiscount.Text = ""
+	End If
+End Sub
 ]]></Script>
   <PageSettings />
   <Parameters />

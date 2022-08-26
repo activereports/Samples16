@@ -8,16 +8,21 @@
 					<Page>
 						<ReportItems>
 							<Table Name="TableBarCodeSymbology">
+								<Left>0.31in</Left>
+								<Width>5.375in</Width>
+								<Height>45.91799in</Height>
+								<Style>
+									<VerticalAlign>Middle</VerticalAlign>
+								</Style>
 								<DataSetName>DataSet1</DataSetName>
 								<Header>
 									<TableRows>
 										<TableRow>
-											<Height>0.593734in</Height>
+											<Height>0.584833in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxSymbology">
-															<Value>Symbology</Value>
 															<Style>
 																<BackgroundColor>AliceBlue</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -29,13 +34,13 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Symbology</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxsample">
-															<Value>Sample</Value>
 															<Style>
 																<BackgroundColor>AliceBlue</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -47,6 +52,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Sample</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -57,12 +63,11 @@
 								<Details>
 									<TableRows>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxAnsi39">
-															<Value>Ansi39</Value>
 															<Style>
 																<BackgroundColor>Gainsboro</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -72,6 +77,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Ansi39</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -117,12 +123,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxAnsi39x">
-															<Value>Ansi39x</Value>
 															<Style>
 																<BackgroundColor>White</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -132,6 +137,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Ansi39x</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -177,12 +183,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxCodaBar">
-															<Value>Codabar</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -192,6 +197,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Codabar</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -237,12 +243,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxCode_128_A">
-															<Value>Code_128_A</Value>
 															<Style>
 																<BackgroundColor>White</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -252,6 +257,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Code_128_A</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -297,12 +303,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxCode_128_B">
-															<Value>Code_128_B</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -312,6 +317,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Code_128_B</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -357,12 +363,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxCode_128_C">
-															<Value>Code_128_C</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -371,6 +376,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Code_128_C</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -415,12 +421,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxCode_128auto">
-															<Value>Code_128auto</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -430,6 +435,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Code_128auto</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -475,12 +481,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxCode_2_of_5">
-															<Value>Code_2_of_5</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -489,6 +494,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Code_2_of_5</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -533,12 +539,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxCode_93">
-															<Value>Code_93</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -548,6 +553,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Code_93</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -593,12 +599,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxCode25intlv">
-															<Value>Code25intlv</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -607,6 +612,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Code25intlv</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -651,12 +657,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxCode39">
-															<Value>Code39</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -666,6 +671,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Code39</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -710,12 +716,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxCode39x">
-															<Value>Code39x</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -724,6 +729,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Code39x</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -767,12 +773,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.84066in</Height>
+											<Height>0.828069in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxCode49">
-															<Value>Code49</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -782,6 +787,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Code49</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -827,12 +833,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxCode93x">
-															<Value>Code93x</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -841,6 +846,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Code93x</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -885,12 +891,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>1.200943in</Height>
+											<Height>1.182969in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxDataMatrix">
-															<Value>DataMatrix</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -900,6 +905,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>DataMatrix</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -945,12 +951,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxEAN_13">
-															<Value>EAN_13</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -959,6 +964,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>EAN_13</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1003,12 +1009,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxEAN_13withAddonCode">
-															<Value>EAN_13 with Add on Code</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -1018,6 +1023,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>EAN_13 with Add on Code</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1079,12 +1085,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxEAN_8">
-															<Value>EAN_8</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -1093,6 +1098,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>EAN_8</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1137,12 +1143,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxEAN128FNC1">
-															<Value>EAN128FNC1</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -1152,6 +1157,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>EAN128FNC1</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1197,12 +1203,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxIntelligentMail">
-															<Value>IntelligentMail</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -1211,6 +1216,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>IntelligentMail</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1255,12 +1261,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.363102in</Height>
+											<Height>0.357648in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxJapanesePostal">
-															<Value>JapanesePostal</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -1270,6 +1275,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>JapanesePostal</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1315,12 +1321,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxMatrix_2_of_5">
-															<Value>Matrix_2_of_5</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -1329,6 +1334,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Matrix_2_of_5</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1373,12 +1379,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxMicroPDF417">
-															<Value>MicroPDF417</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -1388,6 +1393,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>MicroPDF417</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1407,11 +1413,11 @@
 																	<Left>1in</Left>
 																	<Width>1.1811in</Width>
 																	<Height>0.5in</Height>
-																	<ZIndex>4</ZIndex>
 																	<Style>
 																		<FontFamily>Segoe UI Light</FontFamily>
 																		<TextAlign>Center</TextAlign>
 																	</Style>
+																	<ZIndex>4</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:Symbology</Name>
@@ -1434,12 +1440,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>1.175502in</Height>
+											<Height>1.157908in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textBoxMicroQRCode">
-															<Value>Micro QRCode</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -1448,6 +1453,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Micro QRCode</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1488,12 +1494,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxMSI">
-															<Value>MSI</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -1503,6 +1508,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>MSI</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1522,11 +1528,11 @@
 																	<Left>1.125in</Left>
 																	<Width>0.875in</Width>
 																	<Height>0.5in</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Segoe UI Light</FontFamily>
 																		<TextAlign>Center</TextAlign>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -1549,12 +1555,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.600472in</Height>
+											<Height>0.591471in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxPdf417">
-															<Value>Pdf417</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -1563,6 +1568,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Pdf417</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1607,12 +1613,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxPostNet">
-															<Value>PostNet</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -1622,6 +1627,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>PostNet</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1667,12 +1673,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>1.200943in</Height>
+											<Height>1.182969in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxQRCode">
-															<Value>QRCode</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -1681,6 +1686,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>QRCode</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1725,12 +1731,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxRM4SCC">
-															<Value>RM4SCC</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -1740,6 +1745,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>RM4SCC</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1785,12 +1791,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxRSS14">
-															<Value>RSS14</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -1799,6 +1804,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>RSS14</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1843,12 +1849,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxRSS14Stacked">
-															<Value>RSS14Stacked</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -1858,6 +1863,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>RSS14Stacked</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1903,12 +1909,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.84066in</Height>
+											<Height>0.828069in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxRSS14StackedCCA">
-															<Value>RSS14Stacked CCA</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -1917,6 +1922,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>RSS14Stacked CCA</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -1935,11 +1941,11 @@
 																	<Left>0.65in</Left>
 																	<Width>1.8425in</Width>
 																	<Height>0.6299in</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Segoe UI Light</FontFamily>
 																		<TextAlign>Center</TextAlign>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -1970,12 +1976,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.960755in</Height>
+											<Height>0.94637in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxRSS14StackedOmnidirectional">
-															<Value>RSS14StackedOmnidirectional</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -1985,6 +1990,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>RSS14StackedOmnidirectional</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2004,11 +2010,11 @@
 																	<Left>0.875in</Left>
 																	<Width>1.35in</Width>
 																	<Height>0.7874in</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Segoe UI Light</FontFamily>
 																		<TextAlign>Center</TextAlign>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -2031,12 +2037,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxRSS14Truncated">
-															<Value>RSS14Truncated</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -2045,6 +2050,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>RSS14Truncated</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2089,12 +2095,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxRSSExpanded">
-															<Value>RSSExpanded</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -2104,6 +2109,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>RSSExpanded</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2149,12 +2155,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxRSSExpandedStacked">
-															<Value>RSSExpandedStacked</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -2163,6 +2168,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>RSSExpandedStacked</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2207,12 +2213,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxRSSLimited">
-															<Value>RSSLimited</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -2222,6 +2227,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>RSSLimited</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2267,12 +2273,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textbox39">
-															<Value>RSSLimited  CCA</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -2281,6 +2286,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>RSSLimited  CCA</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2333,12 +2339,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxUCCEAN128">
-															<Value>UCCEAN128</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -2348,6 +2353,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>UCCEAN128</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2393,12 +2399,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxUPC_A">
-															<Value>UPC_A</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -2407,6 +2412,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>UPC_A</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2451,12 +2457,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxUPC_AwithAddonCode">
-															<Value>UPC_A with Add on Code</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -2466,6 +2471,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>UPC_A with Add on Code</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2527,12 +2533,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxUPC_E0">
-															<Value>UPC_E0</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -2541,6 +2546,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>UPC_E0</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2597,12 +2603,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxUPC_E0withAddonCode">
-															<Value>UPC_E0 with Add on Code</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -2612,6 +2617,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>UPC_E0 with Add on Code</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2673,12 +2679,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.720566in</Height>
+											<Height>0.70977in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxUPC_E1">
-															<Value>UPC_E1</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<TextAlign>Center</TextAlign>
@@ -2687,6 +2692,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>UPC_E1</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2731,12 +2737,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="textboxUPC_E1withAddonCode">
-															<Value>UPC_E1 with Add on Code</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -2746,6 +2751,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>UPC_E1 with Add on Code</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2807,12 +2813,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox1">
-															<Value>Code11</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<FontSize>10pt</FontSize>
@@ -2828,6 +2833,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Code11</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2846,11 +2852,11 @@
 																	<Left>0.5cm</Left>
 																	<Width>7cm</Width>
 																	<Height>1.4783cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -2877,12 +2883,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox29">
-															<Value>SSCC-18</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -2899,6 +2904,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>SSCC-18</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2918,11 +2924,11 @@
 																	<Left>0.4868333cm</Left>
 																	<Width>7.0132cm</Width>
 																	<Height>1.5028cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -2949,13 +2955,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox27">
-															<Value>Telepen
-(alphanumeric)</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<FontSize>10pt</FontSize>
@@ -2971,6 +2975,8 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>Telepen
+(alphanumeric)</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -2989,11 +2995,11 @@
 																	<Left>0.5cm</Left>
 																	<Width>6.9999cm</Width>
 																	<Height>1.4542cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -3020,12 +3026,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox25">
-															<Value>PZN</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -3042,6 +3047,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>PZN</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -3061,11 +3067,11 @@
 																	<Left>0.5cm</Left>
 																	<Width>7.0938cm</Width>
 																	<Height>1.4783cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -3092,12 +3098,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox23">
-															<Value>ISSN</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<FontSize>10pt</FontSize>
@@ -3113,6 +3118,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>ISSN</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -3130,11 +3136,11 @@
 																	<Left>0.5cm</Left>
 																	<Width>7cm</Width>
 																	<Height>1.524cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -3161,12 +3167,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox21">
-															<Value>BC412</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -3183,6 +3188,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>BC412</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -3202,11 +3208,11 @@
 																	<Left>0.5cm</Left>
 																	<Width>6.9999cm</Width>
 																	<Height>1.4783cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -3233,12 +3239,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox19">
-															<Value>ISBN</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<FontSize>10pt</FontSize>
@@ -3254,6 +3259,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>ISBN</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -3272,11 +3278,11 @@
 																	<Left>0.5cm</Left>
 																	<Width>6.9999cm</Width>
 																	<Height>1.4783cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -3303,12 +3309,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox17">
-															<Value>ISMN</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -3325,6 +3330,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>ISMN</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -3344,11 +3350,11 @@
 																	<Left>0.5cm</Left>
 																	<Width>6.9999cm</Width>
 																	<Height>1.4782cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -3375,12 +3381,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox15">
-															<Value>ITF-14</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<FontSize>10pt</FontSize>
@@ -3396,6 +3401,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>ITF-14</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -3414,11 +3420,11 @@
 																	<Left>0.5cm</Left>
 																	<Width>6.9999cm</Width>
 																	<Height>1.4782cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -3445,12 +3451,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox13">
-															<Value>PharmaCode</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -3467,6 +3472,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>PharmaCode</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -3485,11 +3491,11 @@
 																	<Left>0.5cm</Left>
 																	<Width>7cm</Width>
 																	<Height>1.524cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -3516,12 +3522,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox11">
-															<Value>HIBC Code 128</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<FontSize>10pt</FontSize>
@@ -3537,6 +3542,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>HIBC Code 128</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -3554,11 +3560,11 @@
 																	<Left>0.5cm</Left>
 																	<Width>6.9999cm</Width>
 																	<Height>1.524cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -3585,12 +3591,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox9">
-															<Value>HIBC Code 39</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -3607,6 +3612,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>HIBC Code 39</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -3625,11 +3631,11 @@
 																	<Left>0.5cm</Left>
 																	<Width>6.9999cm</Width>
 																	<Height>1.5cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -3656,12 +3662,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox7">
-															<Value>IATA 2 of 5</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<FontSize>10pt</FontSize>
@@ -3677,6 +3682,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>IATA 2 of 5</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -3695,11 +3701,11 @@
 																	<Left>0.5cm</Left>
 																	<Width>7cm</Width>
 																	<Height>1.399cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -3726,12 +3732,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox5">
-															<Value>UPS Maxicode</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -3748,6 +3753,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>UPS Maxicode</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -3766,11 +3772,11 @@
 																	<Left>1.782cm</Left>
 																	<Width>4.3735cm</Width>
 																	<Height>1.524cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -3801,12 +3807,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.717618in</Height>
+											<Height>0.706866in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox2">
-															<Value>IntelligentMailPackage</Value>
 															<Style>
 																<FontFamily>Segoe UI Light</FontFamily>
 																<PaddingBottom>2pt</PaddingBottom>
@@ -3819,6 +3824,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>IntelligentMailPackage</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -3862,12 +3868,11 @@
 											</TableCells>
 										</TableRow>
 										<TableRow>
-											<Height>0.7086824in</Height>
+											<Height>0.698064in</Height>
 											<TableCells>
 												<TableCell>
 													<ReportItems>
 														<Textbox Name="TextBox3">
-															<Value>GS1QRCode</Value>
 															<Style>
 																<BackgroundColor>LightGray</BackgroundColor>
 																<FontFamily>Segoe UI Light</FontFamily>
@@ -3884,6 +3889,7 @@
 																	<Default>Solid</Default>
 																</BorderStyle>
 															</Style>
+															<Value>GS1QRCode</Value>
 														</Textbox>
 													</ReportItems>
 												</TableCell>
@@ -3903,11 +3909,11 @@
 																	<Left>2.1717cm</Left>
 																	<Width>2.818cm</Width>
 																	<Height>1.524cm</Height>
-																	<ZIndex>3</ZIndex>
 																	<Style>
 																		<FontFamily>Courier New</FontFamily>
 																		<FontSize>8pt</FontSize>
 																	</Style>
+																	<ZIndex>3</ZIndex>
 																	<CustomProperties>
 																		<CustomProperty>
 																			<Name>dd:CaptionLocation</Name>
@@ -3965,15 +3971,145 @@
 												</TableCell>
 											</TableCells>
 										</TableRow>
+										<TableRow>
+											<Height>0.698064in</Height>
+											<TableCells>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox4">
+															<Style>
+																<BackgroundColor>Transparent</BackgroundColor>
+																<FontFamily>Segoe UI Light</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<Value>GS1DataMatrix</Value>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Rectangle Name="Container17">
+															<Style>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<ReportItems>
+																<CustomReportItem Name="Barcode18">
+																	<Type>Barcode</Type>
+																	<Top>0.000005cm</Top>
+																	<Left>2.1604cm</Left>
+																	<Width>2.818cm</Width>
+																	<Height>1.524cm</Height>
+																	<Style>
+																		<FontFamily>Courier New</FontFamily>
+																		<FontSize>8pt</FontSize>
+																	</Style>
+																	<ZIndex>4</ZIndex>
+																	<CustomProperties>
+																		<CustomProperty>
+																			<Name>dd:CaptionLocation</Name>
+																			<Value>Above</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:ComputeChecksum</Name>
+																			<Value>true</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:MaxiCodeOptions.Mode</Name>
+																			<Value>Mode4</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:QRCodeOptions.Model</Name>
+																			<Value>Model2</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:QRCodeOptions.Mask</Name>
+																			<Value>Auto</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:QRCodeOptions.Version</Name>
+																			<Value>-1</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:QRCodeOptions.Connection</Name>
+																			<Value>false</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:QRCodeOptions.ConnectionNumber</Name>
+																			<Value>0</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:QRCodeOptions.ErrorLevel</Name>
+																			<Value>L</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:QRCodeOptions.Encoding</Name>
+																			<Value>65001</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:Value</Name>
+																			<Value>0123456789012345</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:Symbology</Name>
+																			<Value>GS1DataMatrix</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:DataMatrixOptions.StructureNumber</Name>
+																			<Value>0</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:DataMatrixOptions.StructuredAppend</Name>
+																			<Value>false</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:DataMatrixOptions.FileIdentifier</Name>
+																			<Value>0</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:DataMatrixOptions.Ecc000_140SymbolSize</Name>
+																			<Value>Auto</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:DataMatrixOptions.Ecc200EncodingMode</Name>
+																			<Value>Auto</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:DataMatrixOptions.Ecc200SymbolSize</Name>
+																			<Value>SquareAuto</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:DataMatrixOptions.EccMode</Name>
+																			<Value>ECC200</Value>
+																		</CustomProperty>
+																		<CustomProperty>
+																			<Name>dd:DataMatrixOptions.Encoding</Name>
+																			<Value>65001</Value>
+																		</CustomProperty>
+																	</CustomProperties>
+																</CustomReportItem>
+															</ReportItems>
+														</Rectangle>
+													</ReportItems>
+												</TableCell>
+											</TableCells>
+										</TableRow>
 									</TableRows>
 								</Details>
-								<Height>45.90772in</Height>
-								<Left>0.31in</Left>
 								<dd:FixedHeight xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">0cm</dd:FixedHeight>
 								<dd:FixedWidth xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">0cm</dd:FixedWidth>
-								<Style>
-									<VerticalAlign>Middle</VerticalAlign>
-								</Style>
 								<TableColumns>
 									<TableColumn>
 										<Width>2.25in</Width>
@@ -3982,7 +4118,6 @@
 										<Width>3.125in</Width>
 									</TableColumn>
 								</TableColumns>
-								<Width>5.375in</Width>
 							</Table>
 						</ReportItems>
 					</Page>
@@ -4014,7 +4149,7 @@
 				</Field>
 			</Fields>
 			<Query>
-				<CommandText/>
+				<CommandText />
 				<DataSourceName>DataSource1</DataSourceName>
 			</Query>
 		</DataSet>

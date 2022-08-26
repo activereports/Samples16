@@ -32,7 +32,7 @@ namespace GrapeCity.ActiveReports.Samples.ReportWizard
 			SetupTemplates();
 			WizardDialog wizard = CreateWizard();
 			Application.Run(wizard);
-#if NETCOREAPP3_1_OR_GREATER
+#if NET6_0_OR_GREATER
 			Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled);
 #endif
 			if (wizard.DialogResult == DialogResult.OK)
