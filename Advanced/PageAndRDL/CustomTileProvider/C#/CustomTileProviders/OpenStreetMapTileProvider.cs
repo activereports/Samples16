@@ -8,13 +8,15 @@ namespace GrapeCity.ActiveReports.Samples.CustomTileProviders
 	/// <summary>
 	/// Represents service which provides map tile images from Open Street Map (http://www.openstreetmap.org).
 	/// </summary>
-	public sealed class OpenStreetMapTileProvider : IMapTileProvider
+	public sealed class OpenStreetMapTileProvider : BaseTileProvider, IMapTileProvider
 	{
 		private const string UrlTemplate = "http://a.tile.openstreetmap.org/{0}/{1}/{2}.png";
 
 		/// <summary>
 		/// Provider settings:
 		/// Timeout - Response timout
+		/// UseSecureConnection.IsVisible - False
+		/// Style.IsVisible - False
 		/// </summary>
 		public NameValueCollection Settings { get; private set; }
 
@@ -29,16 +31,9 @@ namespace GrapeCity.ActiveReports.Samples.CustomTileProviders
 		{
 			var url = string.Format(UrlTemplate, key.LevelOfDetail, key.Col, key.Row);
 			var timeout = !string.IsNullOrEmpty(Settings["Timeout"]) ? int.Parse(Settings["Timeout"]) : -1;
-			string userAgent = $"ActiveReports Core {typeof(IMapTile).Assembly.GetName().Version} contact ActiveReports.Sales@grapecity.com";
+			string userAgent = $"ActiveReports Core {GetType().Assembly.GetName().Version} contact activereports.sales@grapecity.com";
 
-			WebRequestHelper.DownloadDataAsync(url, timeout, stream => success(new MapTile(key, new ImageInfo(stream, null))), error, userAgent);
-		}
-
-		private const string _copyright = "© 2015 OpenStreetMap contributors. Please see http://www.openstreetmap.org/copyright for more details.";
-
-		public string Copyright
-		{
-			get { return _copyright; }
+			WebRequestHelper.DownloadDataAsync(url, timeout, (stream, contentType) => success(new MapTile(key, new ImageInfo(stream, contentType))), error, userAgent);
 		}
 	}
 }
