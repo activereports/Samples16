@@ -9,38 +9,43 @@ namespace GrapeCity.ActiveReports.Samples.CustomTileProviders
 	/// <summary>
 	/// Represents service which provides map tile images from Google Maps (http://maps.google.com).
 	/// </summary>
-	public sealed class GoogleMapsTileProvider : IMapTileProvider
+	public sealed class GoogleMapsTileProvider : BaseTileProvider, IMapTileProvider
 	{
-		private const string UrlTemplate = 
-			"{3}://maps.googleapis.com/maps/api/staticmap?center={0:g5},{1:g5}&zoom={2}&size=256x256&sensor=false";
+		private const string UrlTemplate =
+			"{3}://maps.googleapis.com/maps/api/staticmap?center={0},{1}&zoom={2}&size=256x256&sensor=false";
 
 		/// <summary>
 		/// Provider settings:
 		/// ApiKey - The key to access API
 		/// Timeout - Response timout
-		/// Language
+		/// Style - Road/Aerial/Hybrid
+		/// Language - API language
 		/// </summary>
 		public NameValueCollection Settings { get; private set; }
 
 		public GoogleMapsTileProvider()
 		{
 			Settings = new NameValueCollection();
-			Settings.Set("Styles", "Roadmap;Satellite;Hybrid;Terrain");
+			Settings.Set("Styles", string.Join(";", Enum.GetNames(typeof(MapTypes))));
 		}
 
 		public void GetTile(MapTileKey key, Action<IMapTile> success, Action<Exception> error)
 		{
 			var tilePosition = key.ToWorldPos();
 			var parameters = GetParameters();
-			
+
 			var url = string.Format(CultureInfo.InvariantCulture.NumberFormat, UrlTemplate,
-				tilePosition.Y, 
+				tilePosition.Y,
 				tilePosition.X,
 				key.LevelOfDetail,
 				parameters.UseSecureConnection ? "https" : "http");
 
 			if (parameters.MapType.HasValue)
-				url += "&maptype=" + parameters.MapType.ToString().ToLower();
+			{
+				var maptype = Enum.GetName(typeof(MapTypes), parameters.MapType);
+				if (maptype != null)
+					url += "&maptype=" + maptype.ToLower();
+			}
 
 			if (!string.IsNullOrEmpty(parameters.Key))
 				url += "&key=" + parameters.Key;
@@ -48,29 +53,37 @@ namespace GrapeCity.ActiveReports.Samples.CustomTileProviders
 			if (!string.IsNullOrEmpty(parameters.Language))
 				url += "&language=" + parameters.Language;
 
-			WebRequestHelper.DownloadDataAsync(url, parameters.Timeout, stream => success(new MapTile(key, new ImageInfo(stream, null))), error);
+			WebRequestHelper.DownloadDataAsync(url, parameters.Timeout, (stream, contentType) => success(new MapTile(key, new ImageInfo(stream, contentType))), error);
 		}
-		
-		#region Parameters
 
+
+		#region Parameters
 		private Parameters GetParameters()
 		{
 			var parameters = new Parameters
-				{
-					Key = Settings["ApiKey"],
-					Timeout = !string.IsNullOrEmpty(Settings["Timeout"]) ? int.Parse(Settings["Timeout"]) : -1,
-					Language = Settings["Language"],
-					UseSecureConnection = !string.IsNullOrEmpty(Settings["UseSecureConnection"]) 
+			{
+				Key = Settings["ApiKey"],
+				Timeout = !string.IsNullOrEmpty(Settings["Timeout"]) ? int.Parse(Settings["Timeout"]) : -1,
+				Language = Settings["Language"],
+				UseSecureConnection = !string.IsNullOrEmpty(Settings["UseSecureConnection"])
 						&& Convert.ToBoolean(Settings["UseSecureConnection"])
-				};
+			};
 
 			switch (Settings["Style"])
 			{
-				case "Road": parameters.MapType = MapTypes.Roadmap;
+				case "Road":
+				case "Roadmap":
+					parameters.MapType = MapTypes.Roadmap;
 					break;
-				case "Aerial": parameters.MapType = MapTypes.Satellite;
+				case "Aerial":
+				case "Satellite":
+					parameters.MapType = MapTypes.Satellite;
 					break;
-				case "Hybrid": parameters.MapType = MapTypes.Hybrid;
+				case "Hybrid":
+					parameters.MapType = MapTypes.Hybrid;
+					break;
+				case "Terrain":
+					parameters.MapType = MapTypes.Terrain;
 					break;
 			}
 
@@ -86,6 +99,7 @@ namespace GrapeCity.ActiveReports.Samples.CustomTileProviders
 			public int Timeout;
 		}
 
+		//[DoNotObfuscateType]
 		enum MapTypes
 		{
 			Roadmap,
@@ -93,15 +107,6 @@ namespace GrapeCity.ActiveReports.Samples.CustomTileProviders
 			Hybrid,
 			Terrain
 		}
-
 		#endregion
-
-
-		private const string _copyright = "Google Maps ©2015 Google, Please see http://www.google.com/intl/en_us/help/legalnotices_maps.html for more details.";
-
-		public string Copyright
-		{
-			get { return _copyright; }
-		}
 	}
 }

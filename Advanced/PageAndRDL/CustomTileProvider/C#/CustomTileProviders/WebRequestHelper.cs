@@ -12,38 +12,11 @@ namespace GrapeCity.ActiveReports.Samples.CustomTileProviders
 		/// </summary>
 		/// <param name="url">Data source Url</param>
 		/// <param name="timeoutMilliseconds">Timeout in milliseconds. If -1 the default timeout will  used.</param>
+		/// <param name="success">Success callback.</param>
+		/// <param name="error">Error callback.</param>
 		/// <param name="userAgent">User-Agent for request.</param>
 		/// <returns></returns>
-		public static Stream DownloadData(string url, int timeoutMilliseconds, string userAgent = null)
-		{
-			var request = WebRequest.CreateHttp(url);
-
-			if (!string.IsNullOrEmpty(userAgent))
-				request.UserAgent = userAgent;
-
-			if (timeoutMilliseconds > 0)
-			{
-				request.Timeout = timeoutMilliseconds;
-			}
-			
-			var response = request.GetResponse();
-
-			//Copy data from buffer (It must be done, otherwise the buffer overflow and we stop to get repsonses).
-			var stream = new MemoryStream();
-			response.GetResponseStream().CopyTo(stream);
-			return stream;
-		}
-
-		/// <summary>
-		/// Load raw data into MemoryStream from specified Url.
-		/// </summary>
-		/// <param name="url">Data source Url</param>
-		/// <param name="timeoutMilliseconds">Timeout in milliseconds. If -1 the default timeout will  used.</param>
-		/// <param name="success">Success callback handler.</param>
-		/// <param name="error">Error callback handler.</param>
-		/// <param name="userAgent">User-Agent for request.</param>
-		/// <returns></returns>
-		public static void DownloadDataAsync(string url, int timeoutMilliseconds, Action<MemoryStream> success, Action<Exception> error, string userAgent = null)
+		public static void DownloadDataAsync(string url, int timeoutMilliseconds, Action<MemoryStream, string> success, Action<Exception> error, string userAgent = null)
 		{
 			var request = WebRequest.CreateHttp(url);
 
@@ -55,30 +28,31 @@ namespace GrapeCity.ActiveReports.Samples.CustomTileProviders
 				request.Timeout = timeoutMilliseconds;
 			}
 
-			Task.Run(() =>
+			request.BeginGetResponse(ar =>
 			{
 				try
 				{
-					var response = request.GetResponse();
+					var response = request.EndGetResponse(ar);
 
-					//Copy data from buffer (It must be done, otherwise the buffer overflow and we stop to get repsonses).
+					//Copy data from buffer (It must be done, otherwise the buffer overflow and we stop to receive responses).
 					var stream = new MemoryStream();
-					response.GetResponseStream().CopyTo(stream);
-					success(stream);
+					var responseStream = response.GetResponseStream();
+					if (responseStream != null)
+					{
+						responseStream.CopyTo(stream);
+						success(stream, response.ContentType);
+					}
+					else
+					{
+						error(new NullReferenceException(nameof(responseStream)));
+					}
 				}
 				catch (Exception exception)
 				{
 					error(exception);
 				}
-			});
-		}
+			}, null);
 
-		public static void CopyTo(this Stream input, Stream output)
-		{
-			var buffer = new byte[16 * 1024];
-			int read;
-			while ((read = input.Read(buffer, 0, buffer.Length)) > 0)
-				output.Write(buffer, 0, read);
 		}
 	}
 }

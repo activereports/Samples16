@@ -2,92 +2,97 @@
 Imports System.Globalization
 Imports GrapeCity.ActiveReports.Extensibility.Rendering.Components.Map
 Imports GrapeCity.ActiveReports.Extensibility.Rendering
-	''' <summary>
-	''' Represents service which provides map tile images from Google Maps (http://maps.google.com).
-	''' </summary>
-	Public NotInheritable Class GoogleMapsTileProvider
-		Implements IMapTileProvider
-		Private Const UrlTemplate As String = "{3}://maps.googleapis.com/maps/api/staticmap?center={0:g5},{1:g5}&zoom={2}&size=256x256&sensor=false"
+''' <summary>
+''' Represents service which provides map tile images from Google Maps (http://maps.google.com).
+''' </summary>
+Public NotInheritable Class GoogleMapsTileProvider
+    Inherits BaseTileProvider
+    Implements IMapTileProvider
 
-		Public Sub New()
-			_settings = New NameValueCollection()
-			_settings.Set("Styles", "Roadmap;Satellite;Hybrid;Terrain")
-		End Sub
-		Public Sub GetTile(key As MapTileKey, success As Action(Of IMapTile), [error] As Action(Of Exception)) Implements IMapTileProvider.GetTile
-			Dim tilePosition = key.ToWorldPos()
-			Dim parameters = GetParameters()
+    ''' <summary>
+    ''' Provider settings:
+    ''' ApiKey - The key to access API
+    ''' Timeout - Response timout
+    ''' Style - Road/Aerial/Hybrid
+    ''' Language - API language
+    ''' </summary>
+    Private _Settings As NameValueCollection
+    Private Const UrlTemplate As String = "{3}://maps.googleapis.com/maps/api/staticmap?center={0},{1}&zoom={2}&size=256x256&sensor=false"
 
-			Dim url = String.Format(CultureInfo.InvariantCulture.NumberFormat, UrlTemplate, tilePosition.Y, tilePosition.X, key.LevelOfDetail, If(parameters.UseSecureConnection, "https", "http"))
+    Public Property Settings As NameValueCollection Implements IMapTileProvider.Settings
+        Get
+            Return _Settings
+        End Get
+        Private Set(ByVal value As NameValueCollection)
+            _Settings = value
+        End Set
+    End Property
 
-			If parameters.MapType.HasValue Then
-				url += "&maptype=" + parameters.MapType.ToString().ToLower()
-			End If
+    Private ReadOnly Property IMapTileProvider_Copyright As String Implements IMapTileProvider.Copyright
+        Get
+            Return Copyright
+        End Get
+    End Property
 
-			If Not String.IsNullOrEmpty(parameters.Key) Then
-				url += Convert.ToString("&key=") & parameters.Key
-			End If
+    Public Sub New()
+        Settings = New NameValueCollection()
+        Settings.[Set]("Styles", String.Join(";", [Enum].GetNames(GetType(MapTypes))))
+    End Sub
 
-			If Not String.IsNullOrEmpty(parameters.Language) Then
-				url += Convert.ToString("&language=") & parameters.Language
-			End If
+    Public Sub GetTile(ByVal key As MapTileKey, ByVal success As Action(Of IMapTile), ByVal [error] As Action(Of Exception)) Implements IMapTileProvider.GetTile
+        Dim tilePosition = key.ToWorldPos()
+        Dim parameters = GetParameters()
 
-			WebRequestHelper.DownloadDataAsync(url, parameters.Timeout, Sub(stream) success(New MapTile(key, New ImageInfo(stream, Nothing))), [error])
-		End Sub
+        Dim url = String.Format(CultureInfo.InvariantCulture.NumberFormat, UrlTemplate, tilePosition.Y, tilePosition.X, key.LevelOfDetail, If(parameters.UseSecureConnection, "https", "http"))
 
-		Public ReadOnly Property Settings As NameValueCollection Implements IMapTileProvider.Settings
-			Get
-				Return _settings
-			End Get
-		End Property
-		Private _settings As NameValueCollection
+        If parameters.MapType.HasValue Then
+            Dim maptype = [Enum].GetName(GetType(MapTypes), parameters.MapType)
+            If maptype IsNot Nothing Then url += "&maptype=" & maptype.ToLower()
+        End If
 
-#Region "Parameters"
+        If Not String.IsNullOrEmpty(parameters.Key) Then url += "&key=" & parameters.Key
 
-		Dim params As Parameters
-		Private Function GetParameters() As Parameters
-			params = New Parameters() With { _
-				   .Key = Settings("ApiKey"), _
-				   .Timeout = If(Not String.IsNullOrEmpty(Settings("Timeout")), Integer.Parse(Settings("Timeout")), -1), _
-				   .Language = Settings("Language"), _
-				   .UseSecureConnection = Not String.IsNullOrEmpty(Settings("UseSecureConnection")) AndAlso Convert.ToBoolean(Settings("UseSecureConnection")) _
-			   }
+        If Not String.IsNullOrEmpty(parameters.Language) Then url += "&language=" & parameters.Language
 
-			Select Case Settings("Style")
-				Case "Road"
-					params.MapType = MapTypes.Roadmap
-					Exit Select
-				Case "Aerial"
-					params.MapType = MapTypes.Satellite
-					Exit Select
-				Case "Hybrid"
-					params.MapType = MapTypes.Hybrid
-					Exit Select
-			End Select
+        WebRequestHelper.DownloadDataAsync(url, parameters.Timeout, Sub(stream, contentType) success(New MapTile(key, New ImageInfo(stream, contentType))), [error])
+    End Sub
 
-			Return params
-		End Function
+    Private Function GetParameters() As Parameters
+        Dim parameters = New Parameters With {
+            .Key = Me.Settings("ApiKey"),
+            .Timeout = If(Not String.IsNullOrEmpty(Me.Settings("Timeout")), Integer.Parse(Me.Settings("Timeout")), -1),
+            .Language = Me.Settings("Language"),
+            .UseSecureConnection = Not String.IsNullOrEmpty(Me.Settings("UseSecureConnection")) AndAlso Convert.ToBoolean(Me.Settings("UseSecureConnection"))
+}
 
-		Private Class Parameters
-			Public Key As String
-			Public MapType As Nullable(Of MapTypes)
-			Public Language As String
-			Public UseSecureConnection As Boolean
-			Public Timeout As Integer
-		End Class
+        Select Case Me.Settings("Style")
+            Case "Road", "Roadmap"
+                parameters.MapType = MapTypes.Roadmap
+            Case "Aerial", "Satellite"
+                parameters.MapType = MapTypes.Satellite
+            Case "Hybrid"
+                parameters.MapType = MapTypes.Hybrid
+            Case "Terrain"
+                parameters.MapType = MapTypes.Terrain
+        End Select
 
-		Private Enum MapTypes
-			Roadmap
-			Satellite
-			Hybrid
-			Terrain
-		End Enum
+        Return parameters
+    End Function
 
-#End Region
-		Private Const _copyright As String = "@2015 Google Tile Provider Sample Copyright"
+    Friend Class Parameters
+        Public Key As String
+        Public MapType As MapTypes?
+        Public Language As String
+        Public UseSecureConnection As Boolean
+        Public Timeout As Integer
+    End Class
 
-		Public ReadOnly Property Copyright() As String Implements IMapTileProvider.Copyright
-			Get
-				Return _copyright
-			End Get
-		End Property
-	End Class
+    '[DoNotObfuscateType]
+    Friend Enum MapTypes
+        Roadmap
+        Satellite
+        Hybrid
+        Terrain
+    End Enum
+End Class
+
